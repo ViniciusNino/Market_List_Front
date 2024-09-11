@@ -1,0 +1,35 @@
+/*
+////////////////////
+BADGE
+////////////////////
+*/
+
+.badge {
+    background: var(--gray-600);
+    border-radius: 28px;
+    padding: 1px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge span {
+    color: #fff;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400;
+}
+
+.badge img {
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+}
+
+.badge-success {
+  background: var(--success-600);
+}
+
+.badge-danger {
+  background: var(--error-600);
+}

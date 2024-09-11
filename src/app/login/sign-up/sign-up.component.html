@@ -1,0 +1,64 @@
+<div class="login-container">
+
+  <form [formGroup]="formSignUp">
+    <div class="login-signup show">
+      <p class="login-signup__title">Login to your account</p>
+      <p class="login-signup__subtitle">Your journey to Canada starts here!</p>
+      <div class="login-signup__wrap">
+        <p class="login-signup__wrap-text">Email</p>
+        <input type="email" class="input" placeholder="Enter email" id="email" formControlName="email">
+      </div>
+      <div *ngIf="onValidateFormField('email', error.REQUIRED, formSignUp)">
+        <span class="span-red">Email Required *</span>
+      </div>
+      <div *ngIf="onValidateFormField('email', error.EMAIL, formSignUp)">
+        <span class="span-red">Format Invalid *</span>
+      </div>
+      <div class="login-signup__wrap">
+        <p class="login-signup__wrap-text">Password</p>
+        <input [type]="!showPassword ? 'password' : 'text'" class="input" placeholder="Enter password" id="password"
+          formControlName="password">
+        <img class="login-signup__wrap-icon" src="../../assets/img/icon-eye-close.png" alt="img"
+          (click)="showPassword = !showPassword">
+      </div>
+      <div *ngIf="onValidateFormField('password', error.REQUIRED, formSignUp)">
+        <span class="span-red">Password Required *</span>
+      </div>
+
+      <div *ngIf="onValidateFormField('password', error.PATTERN, formSignUp)">
+        <span class="span-red">At least 8 characters in length<br />
+          Lowercase letters<br />
+          Uppercase letters<br />
+          Numbers<br />
+          Special characters *</span>
+      </div>
+      <div class="login-signup__remember">
+        <div class="login-signup__remember-wrap">
+          <label class="container">
+            Remember me
+            <input type="checkbox" checked="checked" formSignUp="remember">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <span class="login-signup__remember-text" (click)="onOpenForgotPassword()">Forgot password?</span>
+      </div>
+      <button class="btn-primary login-signup__btn" (click)="onCreateAccount()">Sign up</button>
+      <p class="login-signup__footer">By signing up you confirm that you’ve read and accepted our
+        <a href="https://www.vambora.com/terms-of-use" target="_blank" style="text-decoration:none">
+          <span>Terms of Use </span>
+        </a> &
+        <a href="https://www.vambora.com/privacy" target="_blank" style="text-decoration:none">
+          <span>Privacy Policy</span>
+        </a>
+      </p>
+    </div>
+  </form>
+
+</div>
+
+<div class="login-subcontainer show">
+  Already have an acccout? <span (click)="showSignIn()"> Login here</span>
+</div>
+
+<app-toast [show]="showToast" [toast]="toast" *ngIf="showToast"></app-toast>
+<app-loader *ngIf="loading"></app-loader>

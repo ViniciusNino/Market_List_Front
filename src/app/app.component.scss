@@ -1,0 +1,199 @@
+/*
+////////////////////
+MENU
+////////////////////
+*/
+
+.menu {
+  background: #fff;
+  width: 100%;
+  height: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-wrap:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0px 0px 25px 14px rgb(0 0 0 / 12%);
+}
+
+.menu__logo {
+  margin: 16px 24px;
+}
+
+.menu__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.menu__list-li {
+  padding: 0 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-light-secondary);
+}
+
+.menu__list-li.selected {
+  color: var(--text-light-primary);
+}
+
+.menu__list-li.selected:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-600);
+}
+
+.menu__right {
+  position: relative;
+  display: flex;
+  margin: 16px 24px;
+}
+
+.menu__right-img {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  contain: content;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/*
+////////////////////
+CONFIG
+////////////////////
+*/
+
+.menu__config {
+  background: #fff;
+  box-shadow: 0px 8px 16px rgb(0 0 0 / 12%);
+  border-radius: 8px;
+  width: 250px;
+  min-height: 100px;
+  position: absolute;
+  z-index: 1;
+  right: 30px;
+  top: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 500ms all ease;
+}
+
+.menu__config-backdrop {
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  position: fixed;
+}
+
+.menu__config-wrap {
+  z-index: 2;
+  position: relative;
+}
+
+.menu__config--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu__config-avatar {
+  display: flex;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.menu__config-avatar-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.menu__config-avatar-name {
+  font-weight: 600px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-light-primary);
+}
+
+.menu__config-avatar-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.menu__config-avatar-status {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-light-secondary);
+}
+
+.menu__config-avatar-change {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--primary-300);
+  cursor: pointer;
+}
+
+.menu__config-profile,
+.menu__config-feedback,
+.menu__config-settings,
+.menu__config-logout {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-light-primary);
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.menu__config-profile img,
+.menu__config-feedback img,
+.menu__config-settings img,
+.menu__config-logout img{
+  margin-right: 8px;
+}
+
+.menu__config-logout {
+  color: var(--error-600);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
