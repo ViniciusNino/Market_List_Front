@@ -1,0 +1,206 @@
+:root {
+    --btn-background: var(--primary-600);
+    --btn-color: var(--primary-600);
+    --btn-border: var(--primary-600);
+    --btn-background-hover: var(--primary-700);
+    --btn-background-active: var(--primary-800);
+    --btn-color-active: var(--primary-900);
+
+    --btn-background-secondary-hover: var(--primary-25);
+    --btn-background-secondary-active: var(--primary-50);
+}
+
+/*
+////////////////////
+BOTAO PRIMARY
+////////////////////
+*/
+
+.btn-primary {
+    background: var(--btn-background);
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 22px;
+    font-weight: 600;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms all ease;
+}
+
+.btn-primary:hover {
+    background: var(--btn-background-hover);
+}
+
+.btn-primary:active {
+    background: var(--btn-background-active);
+}
+
+.btn-primary:disabled {
+    cursor: initial;
+    background: var(--gray-25);
+    color: var(--text-light-disabled);
+}
+
+.btn-primary.btn-partition div {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 45px;
+    background: #fff;
+    position: absolute;
+}
+
+.btn-primary.btn-partition label {
+    padding-right: 24px;
+}
+
+.btn-primary.btn-partition:disabled div {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/*
+////////////////////
+BOTAO SECONDARY
+////////////////////
+*/
+
+.btn-secondary {
+    background: #fff;
+    color: var(--btn-color);
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 22px;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--btn-border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms all ease;
+}
+
+.btn-secondary:hover {
+    background: var(--btn-background-secondary-hover);
+}
+
+.btn-secondary:active {
+    background: var(--btn-background-secondary-active);
+    color: var(--color-active);
+}
+
+.btn-secondary:disabled {
+    cursor: initial;
+    background: var(--gray-25);
+    color: var(--text-light-disabled);
+    border-color: var(--gray-200);
+}
+
+.btn-secondary.btn-partition div {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 45px;
+    background: #fff;
+    position: absolute;
+}
+
+.btn-secondary.btn-partition label {
+    padding-right: 24px;
+}
+
+.btn-secondary.btn-partition:disabled div {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/*
+////////////////////
+BOTAO TERTIARY
+////////////////////
+*/
+
+.btn-tertiary {
+    background: transparent;
+    color: var(--btn-color);
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 22px;
+    font-weight: 600;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms all ease;
+}
+
+.btn-tertiary:hover {
+    background: var(--btn-background-secondary-hover);
+}
+
+.btn-tertiary:active {
+    background: var(--btn-background-secondary-active);
+    color: var(--btn-color-active);
+}
+
+.btn-tertiary:disabled {
+    cursor: initial;
+    color: var(--text-light-disabled);
+    background: transparent;
+}
+
+.btn-tertiary.btn-partition div {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 45px;
+    background: #fff;
+    position: absolute;
+}
+
+.btn-tertiary.btn-partition label {
+    padding-right: 24px;
+}
+
+.btn-tertiary.btn-partition:disabled div {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/*
+////////////////////
+BOTAO EXTRA
+////////////////////
+*/
+
+.btn-icon-left {
+    margin-right: 8px;
+}
+
+.btn-icon-right {
+    margin-left: 8px;
+}
+
+.btn-icon-only {
+    padding: 10px;
+}
+
+.btn-danger {
+    --btn-background: var(--error-600);
+    --btn-color: var(--error-600);
+    --btn-border: var(--error-600);
+    --btn-background-hover: var(--error-700);
+    --btn-background-active: var(--error-800);
+    --btn-color-active: var(--error-900);
+
+    --btn-background-secondary-hover: var(--error-25);
+    --btn-background-secondary-active: var(--error-50);
+}

@@ -1,0 +1,48 @@
+<div class="login-container">
+
+  <div class="login-signin show">
+    <p class="login-signin__title">Sign up for Vambora</p>
+    <p class="login-signin__subtitle">Your journey to Canada starts here!</p>
+
+    <form [formGroup]="formSignIp">
+      <div class="login-signin__wrap">
+        <p class="login-signin__wrap-text">Email</p>
+        <input type="email" class="input" placeholder="Enter email" formControlName="email" id="email">
+      </div>
+      <div *ngIf="onValidateFormField('email', error.REQUIRED, formSignIp)">
+        <span class="span-red">Email required</span>
+      </div>
+      <div *ngIf="onValidateFormField('email', error.EMAIL, formSignIp)">
+        <span class="span-red">Invalid email format</span>
+      </div>
+      <div class="login-signin__wrap">
+        <p class="login-signin__wrap-text">Password</p>
+        <input [type]="!showPassword ? 'password' : 'text'" class="input" placeholder="Enter password" id="password"
+          formControlName="password">
+        <img class="login-signup__wrap-icon" src="../../../assets/img/icon-eye-close.png" alt="img"
+          (click)="showPassword = !showPassword">
+      </div>
+      <div *ngIf="onValidateFormField('password', error.REQUIRED, formSignIp)">
+        <span class="span-red">Password required</span>
+      </div>
+    </form>
+
+    <button class="btn-primary login-signin__btn" (click)="onLogin()">Log in</button>
+    <p class="login-signin__footer">By signing up you confirm that you’ve read and accepted our
+      <a href="https://www.vambora.com/terms-of-use" target="_blank" style="text-decoration:none">
+        <span>Terms of Use </span>
+      </a> &
+      <a href="https://www.vambora.com/privacy" target="_blank" style="text-decoration:none">
+        <span>Privacy Policy</span>
+      </a>
+    </p>
+  </div>
+
+</div>
+
+<div class="login-subcontainer show">
+  Don’t have an acccout? <span (click)="showSignUp()"> Sign Up here</span>
+</div>
+
+<app-toast [show]="showToast" [toast]="toast" *ngIf="showToast"></app-toast>
+<app-loader *ngIf="loading"></app-loader>

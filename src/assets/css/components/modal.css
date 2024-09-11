@@ -1,0 +1,80 @@
+.ms-modal {
+  --width: 70%;
+  --height: 550px;
+  --background: transparent;
+  --box-shadow: none;
+}
+
+.lock {
+  overflow: hidden;
+}
+
+.modal-notify,
+.modal-chat,
+.modal-customize,
+.modal-services,
+.modal-add,
+.modal-delete {
+  visibility: hidden;
+}
+
+.modal-notify--open,
+.modal-chat--open,
+.modal-customize--open,
+.modal-services--open,
+.modal-add--open,
+.modal-delete--open {
+  visibility: visible;
+}
+
+.modal-notify--open .modal__container,
+.modal-chat--open .modal__container,
+.modal-customize--open .modal__container,
+.modal-services--open .modal__container,
+.modal-add--open .modal__container,
+.modal-delete--open .modal__container {
+  opacity: 1;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.modal__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transition: 500ms all ease;
+}
+
+.modal-services .modal__container {
+  padding: 0;
+  background: #fff;
+}
+
+.modal__close {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  cursor: pointer;
+}
+
+.modal-services .modal__close {
+  padding: 10px;
+}
+
+.forgot-password {
+  --width: 100%;
+  --height: 100%
+}
